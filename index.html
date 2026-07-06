@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>github-api-calling</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Runtime error overlay for debugging (temporary)
+      (function () {
+        function showErr(msg) {
+          try {
+            var el = document.createElement("div");
+            el.id = "__runtime_error_overlay";
+            el.style.position = "fixed";
+            el.style.left = "12px";
+            el.style.right = "12px";
+            el.style.top = "12px";
+            el.style.background = "#fff0f0";
+            el.style.color = "#900";
+            el.style.padding = "10px 12px";
+            el.style.border = "1px solid #f5c2c7";
+            el.style.zIndex = 99999;
+            el.style.fontFamily = "system-ui, sans-serif";
+            el.style.fontSize = "13px";
+            el.innerText = "Runtime error: " + msg;
+            var old = document.getElementById("__runtime_error_overlay");
+            if (old) old.remove();
+            document.body.appendChild(el);
+          } catch (e) {
+            // ignore
+          }
+        }
+        window.addEventListener("error", function (e) {
+          showErr(e.message || (e.error && e.error.message) || "unknown");
+          window.__lastRuntimeError = e.message || (e.error && e.error.message);
+        });
+        window.addEventListener("unhandledrejection", function (e) {
+          var msg =
+            (e.reason && (e.reason.message || String(e.reason))) ||
+            "Unhandled rejection";
+          showErr(msg);
+          window.__lastRuntimeError = msg;
+        });
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -4,7 +4,7 @@ import {
   HeaderIcon,
   HeaderText,
   Headersvg,
-} from "./header.styles";
+} from "./Header.styles";
 
 const Header = () => {
   const Navigate = useNavigate();

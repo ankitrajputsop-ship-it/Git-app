@@ -1,5 +1,6 @@
 import Header from "../../Component/Header";
 import Search from "../../Component/Search";
+import { useEffect } from "react";
 import {
   HomeContainer,
   HomeContent,
@@ -8,6 +9,9 @@ import {
 } from "./Home.styles";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "GitHub Profile Finder";
+  }, []);
   return (
     <HomeContainer>
       <Header />

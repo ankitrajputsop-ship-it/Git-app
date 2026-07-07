@@ -23,6 +23,7 @@ const UserProfile = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = `${username}'s GitHub Profile`;
     const fetchUser = async () => {
       try {
         const user = await getUser(username);
